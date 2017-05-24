@@ -3,6 +3,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('projectEdna')
         .controller('HomeCtrl', [HomeCtrl]);
 })();

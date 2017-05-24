@@ -1,1 +1,12 @@
-<h1>Home Page</h1>
+<section class="chat-rooms container">
+  <div class="column half">
+      <h1> Bloc Chat</h1>
+      <div></div>
+
+      <ul>
+          <li id="chat-room-list" ng-repeat="room in home.rooms">{{rooms}}</li>
+      </ul>
+   </div>
+</section>
+
+<ng-include src="'/app/index.html'"></ng-include>
