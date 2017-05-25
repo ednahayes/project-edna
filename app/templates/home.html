@@ -7,9 +7,12 @@
       </div>
 
       <!-- ng-submit -->
-      <form>
-        <input ng-model="roomController.room.roomName"></input>
+      <form name="creteRoomForm">
+        <h3>Create New Room</h3>
+        <label>Room name</label>
+        <input ng-enter="roomController.create()"ng-model="roomController.room.roomName"></input>
         <button type="submit">Create room</button>
+        <button type="submit">Cancel</button>
       </form>
 
    </div>
