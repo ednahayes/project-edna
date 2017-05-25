@@ -1,11 +1,17 @@
 <section class="chat-rooms container">
   <div class="column half">
       <h1> Bloc Chat</h1>
-      <div></div>
 
-      <ul>
-          <li id="chat-room-list" ng-repeat="room in home.rooms">{{rooms}}</li>
-      </ul>
+      <div ng-repeat="room in roomController.rooms" ng-click="roomController.roomName(room)">
+        {{ room.$value }}
+      </div>
+
+      <!-- ng-submit -->
+      <form>
+        <input ng-model="roomController.room.roomName"></input>
+        <button type="submit">Create room</button>
+      </form>
+
    </div>
 </section>
 

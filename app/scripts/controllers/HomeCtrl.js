@@ -1,8 +1,10 @@
 (function() {
-    function HomeCtrl() {
+    function HomeCtrl(Room) {
+      
+
     }
 
     angular
-        .module('projectEdna')
+        .module('blocChat')
         .controller('HomeCtrl', [HomeCtrl]);
 })();

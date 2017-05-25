@@ -1,11 +1,15 @@
 (function() {
-    function RoomCtrl() {
-      $scope.rooms = Room.all;
-    }
+    function RoomCtrl(Room) {
+      this.rooms = Room.all;
+      this.room = null;
+      this.roomName = function(room) {
+        this.room = room;
+      }
 
+}
 
 
     angular
-        .module('projectEdna')
+        .module('blocChat')
         .controller('RoomCtrl', ['Room', RoomCtrl]);
 })();
