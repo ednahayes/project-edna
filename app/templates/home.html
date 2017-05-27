@@ -11,7 +11,7 @@
         <!-- ng-submit -->
         <form ng-submit="createRoomForm">
             <h3>Create New Room</h3>
-            <input type="text" ng-click="rooms.$save(roomName)"ng-model="roomController.room.roomName" placeholder="room name" required>{{room.$value.push(roomName)}}</input>
+            <input type="text" ng-click="rooms.$save(newroomName)"ng-model="roomController.room.roomName" placeholder="new-room-name" required>{{newroomName}}</input>
               <button type="button" ng-click="submit()">Create room</button>
         </form>
     </div>
@@ -20,7 +20,8 @@
     $(document).ready(function() {
         $("button").click(function (){
             this.submit = function() {
-                rooms.$add({$value :"roomName"});
+              this.newroomName = null;
+                rooms.$add(this.newroomName);
               }
             });
           });

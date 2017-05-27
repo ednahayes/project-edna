@@ -5,10 +5,10 @@
     var rooms = $firebaseArray(ref);
 
     Room.all = rooms;
-
+    var newroomName = {};
     Room.add = function(room) {
         //Use the firebase method $add here
-        rooms.$add({$value :"roomName"}).then(function(ref) {
+        rooms.$add({newroomName: ''}).then(function(ref) {
           var id = ref.key;
           rooms.$indexFor(id);  //returns location in the array
         });
