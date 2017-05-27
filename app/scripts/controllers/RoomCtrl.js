@@ -4,6 +4,7 @@
       this.room = null;
       this.roomName = function(room) {
         this.room = room;
+        return roomName;
       }
 
 }
@@ -11,5 +12,5 @@
 
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', RoomCtrl]);
+        .controller('RoomCtrl', ['Room',  RoomCtrl]);
 })();

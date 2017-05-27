@@ -1,21 +1,29 @@
 <section class="chat-rooms container">
-  <div class="column half">
+  <div class="left-column">
       <h1> Bloc Chat</h1>
 
       <div ng-repeat="room in roomController.rooms" ng-click="roomController.roomName(room)">
         {{ room.$value }}
       </div>
+      <div ng-bind="roomController.room.roomName"></div>
 
       <!-- ng-submit -->
-      <form name="creteRoomForm">
+      <form ng-submit="createRoomForm">
         <h3>Create New Room</h3>
-        <label>Room name</label>
-        <input ng-enter="roomController.create()"ng-model="roomController.room.roomName"></input>
-        <button type="submit">Create room</button>
-        <button type="submit">Cancel</button>
-      </form>
+        <input type="text" ng-click="rooms.$save(roomName)"ng-model="roomController.room.roomName" placeholder="room name" required>{{room.$value.push(roomName)}}</input>
+        <button type="button" ng-click="submit()">Create room</button>
 
-   </div>
-</section>
+        </div>
+        </form>
+<script>
+$(document).ready(function() {
+  $("button").click(function (){
+    this.submit = function() {
+      rooms.$add({$value :"roomName"});
+    }
+  });
+});
+
+</script>
 
 <ng-include src="'/app/index.html'"></ng-include>
