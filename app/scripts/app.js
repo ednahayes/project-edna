@@ -12,11 +12,7 @@
             controller: 'RoomCtrl as roomController',
             templateUrl: '/templates/home.html'
         })
-        .state('modal', {
-            url: '/',
-            controller: 'ModalCtrl as modalController',
-            templateUrl: '/templates/modal.html'
-        })
+
 
 
 

@@ -1,29 +1,43 @@
 <section class="chat-rooms container">
-  <div class="left-column">
-      <h1> Bloc Chat</h1>
+    <div class="left-column">
+        <h1> Bloc Chat</h1>
 
-      <div ng-repeat="room in roomController.rooms" ng-click="roomController.roomName(room)">
+        <div ng-repeat="room in roomController.rooms" ng-click="roomController.roomName(room)">
         {{ room.$value }}
-      </div>
-      <div ng-bind="roomController.room.roomName"></div>
-
-      <!-- ng-submit -->
-      <form ng-submit="createRoomForm">
-        <h3>Create New Room</h3>
-        <input type="text" ng-click="rooms.$save(roomName)"ng-model="roomController.room.roomName" placeholder="room name" required>{{room.$value.push(roomName)}}</input>
-        <button type="button" ng-click="submit()">Create room</button>
-
         </div>
+        <div ng-bind="roomController.room.roomName">
+        </div>
+
+        <!-- ng-submit -->
+        <form ng-submit="createRoomForm">
+            <h3>Create New Room</h3>
+            <input type="text" ng-click="rooms.$save(roomName)"ng-model="roomController.room.roomName" placeholder="room name" required>{{room.$value.push(roomName)}}</input>
+              <button type="button" ng-click="submit()">Create room</button>
         </form>
+    </div>
+
 <script>
-$(document).ready(function() {
-  $("button").click(function (){
-    this.submit = function() {
-      rooms.$add({$value :"roomName"});
-    }
-  });
-});
+    $(document).ready(function() {
+        $("button").click(function (){
+            this.submit = function() {
+                rooms.$add({$value :"roomName"});
+              }
+            });
+          });
 
 </script>
 
+<div class="right-column" data-ng-controller="HomeCtrl as homeController">
+      <section class="room-title">
+          <h1>{{currentRoomTitle}}</h1>
+        </section>
+        <div ng-repeat="message in currentRoomMessages">
+            <b>{{message.username}}</b>:
+            <br>
+              {{message.content}}
+            </br>
+        </div>
+</div>
+
+</section>
 <ng-include src="'/app/index.html'"></ng-include>

@@ -4,7 +4,7 @@
       this.room = null;
       this.roomName = function(room) {
         this.room = room;
-        return roomName;
+        return this.room;
       }
 
 }
