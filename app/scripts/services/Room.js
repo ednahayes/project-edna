@@ -6,16 +6,19 @@
 
     Room.all = rooms;
     var newroomName = {};
-    Room.add = function(room) {
+
+    Room.add = function(newroomName) {
         //Use the firebase method $add here
-        rooms.$add({newroomName: ''}).then(function(ref) {
-          var id = ref.key;
-          rooms.$indexFor(id);  //returns location in the array
+        rooms.$add({
+          name: newroomName
         });
     }
 
     return Room;
   }
+
+
+
 
   angular
     .module('blocChat')

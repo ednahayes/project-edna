@@ -3,7 +3,9 @@
   position : left;
 }
 
-
+.h1 {
+  color: blue;
+}
 .createRoomForm {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -31,6 +33,7 @@
 
 .room {
     padding-top: 1rem;
+    text-decoration-color: pink;
 }
 
 .left-column-header{
@@ -39,18 +42,21 @@
     border-bottom: 3px solid black;
     padding-bottom: .5rem;
     margin-bottom: 1rem;
+
 }
 
 .left-column {
     background-color: grey;
     flex: .3;
     padding: 1rem;
+    color: cyan;
 }
 
 .right-column {
     background-color: lightgrey;
     flex: 1;
     padding: 1rem;
+    color: royalblue;
 }
 
 .room-title {
@@ -58,4 +64,8 @@
     border-bottom: 3px solid black;
     padding-bottom: .9rem;
     margin-bottom: 1rem;
+    color: pink;
+}
+.p {
+    text-align: right;
 }

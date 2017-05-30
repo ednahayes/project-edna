@@ -1,11 +1,8 @@
 (function() {
     function RoomCtrl(Room) {
       this.rooms = Room.all;
+      this.createRoomForm = Room.add;
       this.room = null;
-      this.roomName = function(room) {
-        this.room = room;
-        return this.room;
-      }
 
 }
 
