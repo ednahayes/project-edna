@@ -1,22 +1,23 @@
 (function() {
-    function RoomCtrl(Room, Message) {
+    function RoomCtrl(Room, Message, $cookies) {
       this.rooms = Room.all;
       this.createRoomForm = Room.add;
-      this.room = null;
+      this.currentRoomTitle = null;
       this.Message = {};
 
 
       this.openRoom = function(room) {
         this.currentRoomTitle = room;
+
         this.currentRoomMessages = Message.getByRoomId(this.currentRoomTitle.$id);
 
         }
 
 
-      }
+    };
 
 
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', 'Message', RoomCtrl]);
+        .controller('RoomCtrl', ['Room', 'Message', '$cookies', RoomCtrl]);
 })();
