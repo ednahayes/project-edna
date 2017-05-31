@@ -19,12 +19,12 @@
 
     <div class="right-column">
           <section class="room-title">
-              <h1 ng-show="roomController.currentRoomTitle">{{currentRoomTitle}}</h1>
+              <h1 ng-show="openRoom(room)">{{currentRoomTitle}}</h1>
           </section>
           <div ng-repeat="message in roomController.currentRoomMessages">
-              <b>{{Message.username}}</b>:
+              <b>{{message.username}}</b>:
               <br>
-              <i>{{Message.content}}</i> <p>{{Message.sentAt}}</p>
+              <i>{{message.content}}</i> <p>{{message.sentAt}}</p>
               </br>
           </div>
     </div>

@@ -7,9 +7,9 @@
 
 
       this.openRoom = function(room) {
-        this.currentRoomTitle = room.name;
-        this.currentRoomMessages = Message.getByRoomId(roomId);
-console.log("from openRoom");
+        this.currentRoomTitle = room;
+        this.currentRoomMessages = Message.getByRoomId(this.currentRoomTitle.$id);
+
         }
 
 
@@ -18,5 +18,5 @@ console.log("from openRoom");
 
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', RoomCtrl]);
+        .controller('RoomCtrl', ['Room', 'Message', RoomCtrl]);
 })();
