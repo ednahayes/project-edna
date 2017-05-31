@@ -2,7 +2,7 @@
     <div class="left-column">
         <h1> Bloc Chat</h1>
 
-        <div ng-repeat="room in roomController.rooms" ng-click="roomController.openRoom(room.name)">
+        <div ng-repeat="room in roomController.rooms" ng-click="roomController.openRoom(room)">
         {{ room.name }}
         </div>
         <div ng-bind="roomController.room.roomName">
@@ -19,12 +19,12 @@
 
     <div class="right-column">
           <section class="room-title">
-              <h1>{{currentRoomTitle}}</h1>
+              <h1 ng-show="roomController.currentRoomTitle">{{currentRoomTitle}}</h1>
           </section>
-          <div ng-repeat="message in currentRoomMessages">
-              <b>{{message.username}}</b>:
+          <div ng-repeat="message in roomController.currentRoomMessages">
+              <b>{{Message.username}}</b>:
               <br>
-              <i>{{message.content}}</i> <p>{{message.sentAt}}</p>
+              <i>{{Message.content}}</i> <p>{{Message.sentAt}}</p>
               </br>
           </div>
     </div>

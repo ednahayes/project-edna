@@ -17,5 +17,5 @@
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', 'Room', Message]);
+    .factory('Message', ['$firebaseArray', Message]);
 })();

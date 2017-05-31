@@ -7,9 +7,9 @@
 
 
       this.openRoom = function(room) {
-      this.currentRoomTitle = room.name;
-      this.currentRoomMessages = Message.getByRoomId;
-
+        this.currentRoomTitle = room.name;
+        this.currentRoomMessages = Message.getByRoomId(roomId);
+console.log("from openRoom");
         }
 
 
