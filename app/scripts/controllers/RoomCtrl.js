@@ -1,5 +1,5 @@
 (function() {
-    function RoomCtrl(Room, Message, $cookies) {
+    function RoomCtrl(Room, Message, BlocChatCookies) {
       this.rooms = Room.all;
       this.createRoomForm = Room.add;
       this.currentRoomTitle = null;
@@ -19,5 +19,5 @@
 
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', 'Message', '$cookies', RoomCtrl]);
+        .controller('RoomCtrl', ['Room', 'Message', 'BlocChatCookies', RoomCtrl]);
 })();
