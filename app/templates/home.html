@@ -11,9 +11,15 @@
         <!-- ng-submit -->
         <form ng-submit="roomController.createRoomForm(roomController.newRoomName)">
             <h3>Create New Room</h3>
-            <input type="text" ng-model="roomController.newRoomName" placeholder="new-room-name" required>{{newroomName}}</input>
+            <input type="text" ng-model="roomController.newRoomName" placeholder="new-room-name" >{{newroomName}}</input>
             <button type="submit">Create room</button>
         </form>
+        <div>
+          <form class="Login-form" ng-submit="roomController.setUserName(roomController.newCurrentUser)">
+            <h3>Enter User Name</h3>
+            <input type="text" ng-model="roomController.newCurrentUser" value="Log in" placeholder="Enter user name" required>{{newCurrentUser}}</input>
+            <button type="submit">Submit</button>
+        </div>
     </div>
 
 
@@ -24,10 +30,18 @@
           <div ng-repeat="message in roomController.currentRoomMessages">
               <b>{{message.username}}</b>:
               <br>
-              <i>{{message.content}}</i> <p>{{message.sentAt}}</p>
+              <i>{{message.content}}</i> <p>{{message.sentAt | date: "short" : 'CST' }}</p>
               </br>
+              <section class="new-user-name-and-new-message" ng-model="roomController.currentUser.newCurrentUser">
+              <h3>{{roomController.currentUser.username}}</h3>:
+              <form class="new-message">
+            	<input type="text" class="new-message-input" placeholder="your message here" ng-model="message.content">
+			        <input class="button" type="submit" value="Send" ng-click="roomController.sendMessage(message)">
+            </section>
           </div>
     </div>
+
+
 
 </section>
 <ng-include src="'/app/index.html'"></ng-include>

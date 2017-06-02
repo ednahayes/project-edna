@@ -11,11 +11,19 @@
 
     };
 
+    Message.send = function(newMessage) {
+    // Send method logic
+        messages.$add({ content: message.content,
+                        roomId: message.roomId,
+					   	          sentAt: message.sentAt,
+						            username: message.currentUser
+                      });
+    }
     return Message;
-  };
+  }
 
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', Message]);
+    .factory('Message', ['$firebaseArray', '$cookies', Message]);
 })();

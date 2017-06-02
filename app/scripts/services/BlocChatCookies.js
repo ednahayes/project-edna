@@ -8,9 +8,13 @@
       $cookies.put('blocChatCurrentUser', username);
     }
     // (Using the $cookies service)
+    var newCurrentUser = {};
     var currentUser = $cookies.get('blocChatCurrentUser');
     if (!currentUser || currentUser === '') {
       // Do something to allow users to set their username
+
+
+       currentUser = {username: newCurrentUser};
     }
 
     return BlocChatCookies;

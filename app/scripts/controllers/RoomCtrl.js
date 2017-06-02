@@ -13,6 +13,11 @@
 
         }
 
+        this.setUserName = function(username) {
+          this.currentUser = BlocChatCookies.setUserName();
+        }
+
+        this.sendMessage = Message.send;
 
     };
 
