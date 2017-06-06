@@ -11,12 +11,15 @@
 
     };
 
-    Message.send = function(newMessage) {
+    Message.send = function(content, user, roomId) {
+      console.log(content);
+      console.log(user);
+      console.log(roomId);
+
     // Send method logic
-        messages.$add({ content: message.content,
-                        roomId: message.roomId,
-					   	          sentAt: message.sentAt,
-						            username: message.currentUser
+        messages.$add({ content: content,
+                        roomId: roomId,
+					   	          username: user
                       });
     }
     return Message;

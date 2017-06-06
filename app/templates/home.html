@@ -2,11 +2,11 @@
     <div class="left-column">
         <h1> Bloc Chat</h1>
 
-        <div class="room-name" ng-repeat="room in roomController.rooms" ng-click="roomController.openRoom(room)" >
-        {{ room.name }}
-        </div>
-        <div ng-bind="roomController.room.roomName">
-        </div>
+            <div class="room-name" ng-repeat="room in roomController.rooms" ng-click="roomController.openRoom(room)" >
+              {{ room.name }}
+            </div>
+            <div ng-bind="roomController.room.roomName">
+            </div>
 
         <!-- ng-submit -->
         <form ng-submit="roomController.createRoomForm(roomController.newRoomName)">
@@ -17,7 +17,8 @@
         <div>
           <form class="Login-form" ng-submit="roomController.setUserName(roomController.newCurrentUser)">
             <h3>Enter User Name</h3>
-            <input type="text" ng-model="roomController.newCurrentUser" value="Log in" placeholder="Enter user name" required>{{newCurrentUser}}</input>
+            <input type="text" ng-model="roomController.newCurrentUser" placeholder="Enter user name" required >
+            {{newCurrentUser}}</input>
             <button type="submit">Submit</button>
         </div>
     </div>
@@ -28,17 +29,18 @@
               <h1 style="text-align:center">{{roomController.currentRoomTitle.name}}</h1>
           </section>
           <div ng-repeat="message in roomController.currentRoomMessages">
-              <b>{{message.username}}</b>:
+              <b>{{message.username}}</b>
               <br>
-              <i>{{message.content}}</i> <p>{{message.sentAt | date: "short" : 'CST' }}</p>
+              <i>{{message.content}}</i> <p>{{message.sentAt | date: "short": 'CST' }}</p>
               </br>
-              <section class="new-user-name-and-new-message" ng-model="roomController.currentUser.newCurrentUser">
-              <h3>{{roomController.currentUser.username}}</h3>:
-              <form class="new-message">
-            	<input type="text" class="new-message-input" placeholder="your message here" ng-model="message.content">
-			        <input class="button" type="submit" value="Send" ng-click="roomController.sendMessage(message)">
-            </section>
           </div>
+          <section class="new-user-name-and-new-message" ng-model="roomController.currentUser.newCurrentUser">
+              <h3 >{{roomController.newCurrentUser}}:</h3>
+              <form class="new-message">
+            	   <input type="text" class="new-message-input" placeholder="your message here" ng-model="newContent">
+			           <button ng-click="roomController.sendMessage(newContent, roomController.newCurrentUser, roomController.currentRoomTitle.$id)" class="button" type="submit">Submit</button>
+               </form>
+          </section>
     </div>
 
 
