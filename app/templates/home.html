@@ -1,7 +1,8 @@
 <section class="chat-rooms container">
     <div class="left-column">
-        <h1> Bloc Chat</h1>
 
+        <h1 class="title_Bloc_Chat"> Bloc Chat</h1>
+        <span class="ion-android-chat" style="text-align:center""></span>
             <div class="room-name" ng-repeat="room in roomController.rooms" ng-click="roomController.openRoom(room)" >
               {{ room.name }}
             </div>

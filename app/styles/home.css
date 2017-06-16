@@ -5,13 +5,11 @@
 
 }
 
-.left-column {
-  background-color: lightgrey;
-  position : left;
-}
 
-.h1 {
-  color: blue;
+
+.title_Bloc_Chat {
+  color: white;
+  font-size: 50px;
 }
 .createRoomForm {
     display: none; /* Hidden by default */
@@ -27,7 +25,12 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-
+.ion-android-chat{
+  color: white;
+  font-size: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Pattern styles */
 .container {
@@ -55,14 +58,14 @@
 }
 
 .left-column {
-    background-color: grey;
+    background-color: #0040ff;
     flex: .3;
     padding: 1rem;
     color: cyan;
 }
 
 .right-column {
-    background-color: lightgrey;
+    background-color: cyan;
     flex: 1;
     padding: 1rem;
     color: royalblue;
@@ -73,7 +76,7 @@
     border-bottom: 3px solid black;
     padding-bottom: .9rem;
     margin-bottom: 1rem;
-    color: cyan;
+    color: #0040ff;
 }
 .p {
     text-align: right;
